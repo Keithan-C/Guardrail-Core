@@ -1,0 +1,59 @@
+AI Compliance Middleware Wrapper (v1.0)
+Ship Compliant AI, Faster.
+
+This repository contains the standard Compliance Schema and Middleware Logic required for all AI features at LXD Advisory. By implementing this wrapper, you automate the "boring stuff" (PII scrubbing, audit logging, and bias checks) so you can focus on building the model.
+
+🚀 Quick Start
+1. Install the Wrapper
+
+Add the middleware to your project to intercept model inputs/outputs.
+
+Bash
+npm install @yourbiz/compliance-wrapper
+# or
+pip install yourbiz-compliance-wrapper
+2. Define your compliance.json
+
+Create a compliance.json file in your root directory. This is your "Contract." If your model settings don't match this schema, the build will fail.
+
+JSON
+{
+  "project_metadata": { "feature_id": "support-bot-v1" },
+  "data_governance": { "pii_scrubbing": true },
+  "model_guardrails": { "max_toxicity_score": 0.1 }
+}
+3. Initialize the Middleware
+
+Wrap your LLM call to ensure every request is audited against the Tier 2 Dashboard.
+
+Python
+from compliance_wrapper import AIWrapper
+
+# Load your local schema
+compliance_config = "./compliance.json"
+
+# Initialize the 'Safe' client
+ai_client = AIWrapper(api_key="YOUR_LLM_KEY", schema=compliance_config)
+
+# This call is automatically scrubbed for PII and logged for the PM Audit
+response = ai_client.generate("Hello, my credit card number is...") 
+# Result: "Hello, my [REDACTED] is..."
+🛠️ The Developer "Hook" (CI/CD)
+To prevent "Compliance Drift," we’ve integrated a Pre-Commit Hook.
+
+Automated Linting: Every PR is scanned. If pii_scrubbing is set to false or the model_version is outdated, the build is blocked.
+
+Why? This ensures you never have to deal with a retroactive "Security Audit" or a manual data cleanup.
+
+📊 Tier Connectivity (The Big Picture)
+Tier 1 (You): You use this README to integrate the schema.
+
+Tier 2 (PMs): Your logging_endpoint automatically feeds the Automated Audit Dashboard.
+
+Tier 3 (Board): This repo generates the Liability Certificate based on your passing builds.
+
+⚠️ Common Compliance Failures
+Error Code	Meaning	Fix
+ERR_PII_LEAK	PII detected in output	Enable pii_scrubbing in your JSON.
+ERR_TOXIC_HALT	Model exceeded toxicity limit	Adjust system prompt or lower temperature.
+ERR_SCHEMA_MISMATCH	Code doesn't match compliance.json	Update your local JSON to match the Master Schema.
