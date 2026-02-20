@@ -1,0 +1,24 @@
+{
+  "project_metadata": {
+    "feature_id": "customer-support-bot-v2",
+    "owner_email": "pm@yourbusiness.com",
+    "compliance_tier": "Level_3_High_Risk"
+  },
+  "data_governance": {
+    "pii_scrubbing": true,
+    "retention_policy_days": 30,
+    "training_data_source": "verified_internal_kb",
+    "consent_flow_active": true
+  },
+  "model_guardrails": {
+    "max_toxicity_score": 0.1,
+    "hallucination_check": "enabled",
+    "permitted_languages": ["en", "es", "fr"],
+    "bias_mitigation_metrics": ["gender", "age", "zip_code"]
+  },
+  "audit_trail": {
+    "logging_endpoint": "https://api.yourcompliancewrapper.com/v1/logs",
+    "version_control_hash": "sha256:7b92...8e4",
+    "human_in_the_loop_required": true
+  }
+}
