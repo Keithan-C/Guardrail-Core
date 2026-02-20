@@ -1,0 +1,13 @@
+🛡️ The Axiom Shared Responsibility Matrix
+
+Category,Axiom (You),The Client (Business/Dev/Legal)
+Legal Standards,Provides the structure to input legal requirements into the schema.,Provides the actual legal interpretation and final sign-off on rules.
+Technical Integration,Provides the Middleware Wrapper/SDK and documentation (README).,Responsible for the correct implementation of the SDK into their codebase.
+Data Privacy,Provides the PII Scrubbing logic and triggers.,"Decides what data is considered PII based on their specific industry (e.g., HIPAA vs. GDPR)."
+AI Performance,Monitors and logs Toxicity/Bias/Hallucinations via the Pulse Dashboard.,Responsible for Prompt Engineering and model training to reduce those metrics.
+"The ""Kill Switch""",Provides the Dashboard Toggle to disable a failing feature.,Responsible for the Executive Decision to flip the switch.
+Liability Certification,"Generates a report based on System Logs (The ""Proof"").",Responsible for presenting that proof to their Insurers and Regulators.
+
+Agreement:
+
+"Axiom provides a Governance Orchestration Platform. The Client acknowledges that Axiom does not provide legal, architectural, or engineering services. The Client’s iInternal Legal Counsel and Lead Engineers retain sole responsibility for the configuration of compliance thresholds and the verification of technical deployments."
