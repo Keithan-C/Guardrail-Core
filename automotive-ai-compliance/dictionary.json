@@ -1,0 +1,30 @@
+{
+  "version": "2026.1.0",
+  "industry_context": "VDI ELIV Congress - AI & SDV Tracks",
+  "mappings": [
+    {
+      "business_requirement": "AI Act Compliance (High-Risk AI)",
+      "technical_implementation": "Traceable-ML-Pipelines",
+      "code_logic": "Implementing metadata logging for all training data subsets and versioning model weights via DVC (Data Version Control).",
+      "vdi_track": "Cyber Security & AI Safety"
+    },
+    {
+      "business_requirement": "Software-Defined Vehicle (SDV) Agility",
+      "technical_implementation": "Microservices-Abstraction-Layer",
+      "code_logic": "Decoupling hardware-specific drivers from application logic using containerized (Docker/Podman) runtime environments.",
+      "vdi_track": "Automotive Software Architecture"
+    },
+    {
+      "business_requirement": "Autonomous Driving Safety (ASIL-D)",
+      "technical_implementation": "Deterministic-Execution-Kernels",
+      "code_logic": "Replacing probabilistic loops with time-triggered execution to ensure worst-case execution time (WCET) bounds.",
+      "vdi_track": "Automated Driving"
+    },
+    {
+      "business_requirement": "Data Sovereignty / Privacy",
+      "technical_implementation": "Edge-Inference-Only",
+      "code_logic": "Restricting $f(x)$ mapping to local ECU memory; zero-ingress/egress for PII (Personally Identifiable Information).",
+      "vdi_track": "Connected Car & Cloud"
+    }
+  ]
+}
